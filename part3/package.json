@@ -1,0 +1,20 @@
+{
+  "name": "phonebook",
+  "version": "1.0.0",
+  "description": "Node.js backend for phonebook application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "build:ui": "rm -rf dist && cd ../part2/phonebook && npm run build && cp -r dist ../../part3"
+  },
+  "author": "Thuti Navaneeth Reddy",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
