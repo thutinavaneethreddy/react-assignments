@@ -59,7 +59,7 @@ const App = () => {
         PersonService.updatePerson(oldPerson.id, newPerson).then((response) => {
           setPersons(persons.map((person) => person.id == oldPerson.id ? response : person));
           setSuccessMessage(`${newPerson.name}'s number updated`);
-          setTimeout(() => setSuccessMessage(""), 3000);
+          setTimeout(() => setSuccessMessage(""), 5000);
         });
       }      
     } else {
@@ -72,7 +72,13 @@ const App = () => {
         setSuccessMessage(`Added ${response.name}`);
         setTimeout(() => {
           setSuccessMessage("");
-        }, 3000)
+        }, 5000)
+      }).catch((error) => {
+        setErrorMessage(error.response.data.error);
+        setTimeout(() => {
+          setErrorMessage("");
+        }, 5000);
+        console.log(error.response.data.error);
       });
     }
   };
